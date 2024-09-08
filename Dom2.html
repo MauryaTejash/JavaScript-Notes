@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom </title>
+</head>
+<body style="background-color: #222222; color: white;">
+    <div class="parent">
+        <div class="day">Mon</div>
+        <div class="day">Tues</div>
+        <div class="day">Wed</div>
+        <div class="day">Thrus</div>
+
+    </div>
+
+    <ul class="lang">
+        <li>C++</li>
+    </ul>
+</body>
+<script>
+    const val1 = document.querySelector('.parent')
+    console.log(val1);
+    console.log(val1.children); //this give HTMLCollection which is similar to array not array
+    console.log(val1.children[2].innerHTML);
+    //console.log(val1.children[2].innerHTML = 'Hello');
+
+    // Note
+    // (Parent.children) give the HTMLCollection
+
+    for (let i = 0; i < val1.children.length; i++) {
+        console.log(val1.children[i].innerHTML);
+    }
+
+    // val1.children[1].style.color = 'red'
+
+    console.log("Nodes: ",val1.childNodes);
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// formation/use of createElement
+
+    const pa = document.createElement('p')
+    console.log(pa);
+
+    //to add the class and id to created element
+
+    // pa.className = 'hello'
+    // pa.id = Math.round(Math.random()*10 +1)
+
+    pa.setAttribute('name','tejash')
+    pa.style.color = 'blue'
+    //pa.innerHTML = "Hello Tejash"
+    const text = document.createTextNode("Hello Tejash")
+    pa.appendChild(text);
+
+    // to attach the createElement value to web page we use
+    document.body.appendChild(pa)
+    
+    //by using the function we are able to createElement and append its child value into webpage
+
+    function addNum(name){
+        const data = document.createElement('li')
+        data.innerHTML = `${name}`
+        document.querySelector('.lang').appendChild(data)
+    }
+    
+    addNum('tejash')
+    addNum('maurya')
+    
+
+    // the optimised approach for above code
+
+    function addNum(name){
+        const data = document.createElement('li')
+        data.appendChild(document.createTextNode(name))
+        document.querySelector('.lang').appendChild(data)
+    }
+    addNum('hello')
+
+
+    //edit
+
+    const lan = document.querySelector('li:nth-child(3)')
+    const newli = document.createElement('li')
+    newli.textContent = 'python'
+    lan.replaceWith(newli)
+
+    //remove
+
+    const newLa = document.querySelector('li:nth-child(1)')
+    newLa.remove()
+</script>
+</html>
