@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout function</title>
+</head>
+<body>
+    <div class="div">
+        <p>Hello Tejash</p>
+        <input type="button" id="but" value="Click">
+    </div>
+</body>
+<script>
+    let val = function(){
+        console.log('Tejash');
+        
+    }
+    const newVal = function(){
+        document.querySelector('p').innerHTML = 'Tejash Maurya'
+    }
+
+    //this will change the value when click is perform
+    document.querySelector('#but').addEventListener('click',function(){
+        setTimeout(newVal,2000)
+    })
+
+    // const change = setTimeout(newVal,2000)
+    //this will clear all the value from the queue 
+    // document.querySelector('#but').addEventListener('click',function(){
+    //     clearTimeout(change)
+    //     console.log('Done');
+        
+    // })
+</script>
+</html>
