@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api request</title>
+</head>
+<body>
+    hello tejash maurya
+    <div id="github">
+        <img src="" id="img" style="width: 100px;">
+        <p class="name"></p>
+    </div>
+</body>
+<script>
+    const api = 'https://api.github.com/users/mauryatejash'
+    const request = new XMLHttpRequest();
+    request.open('GET',api)
+    console.log('Reach');
+
+    //onreadystatechange define function which will execute when readyState change
+    request.onreadystatechange = function(){
+        console.log(request.readyState); //readyState hold the property of XMLHttpRequest
+        if(request.readyState === 4){
+
+            //when data comes from API then it is in 'String' form we have to convert it into JSON
+            const ans = JSON.parse(this.responseText);
+            console.log(ans.followers);
+            const img = (ans.avatar_url);
+            document.querySelector('#img').setAttribute('src',`${img}`)
+            document.querySelector('.name').innerHTML = `Name: ${ans.name}`
+            
+        }
+    }
+    request.send()
+    
+</script>
+</html>
