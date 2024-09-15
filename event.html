@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body id="bdy">
+    <div id="images">
+        <ul id="ulimg">
+            <li><img src="" alt="img1" id="id1"></li>
+            <li><img src="" alt="img2" id="id2"></li>
+            <li><img src="" alt="img3" id="id3"></li>
+            <li><img src="" alt="img4" id="id4"></li>
+        </ul>
+        <input type="text" id="inp">
+    </div>
+    <p id="pid"></p>
+</body>
+<script>
+    //provide the less features
+    // document.getElementById('id1').onclick = function(){
+    //     alert('clicked')
+    // }
+
+    //best approach 
+    // document.getElementById('inp').addEventListener('keypress',function(e){
+
+        // alert('clicked')
+        // console.log(e);
+        // console.log(e.timeStamp)
+        // console.log(e.type)
+        // console.log(e.toElement);
+
+        // this all 3 give the same result
+        // console.log(e.target);
+        // console.log(e.srcElement);
+        // console.log(e.currentTarget);
+        ////////////////////////////// 
+
+        // this will provide the position of placed values   
+        // console.log(e.clientX);
+        // console.log(e.clientY);
+        // console.log(e.screenX);
+        // console.log(e.screenY);
+//}
+        //to print the key press values the code is given below
+        /*
+        const pid = document.getElementById('pid')
+        const input = document.querySelector('input')
+        input.addEventListener('keypress',log)
+        function log(e){
+            pid.innerHTML += `${e.code}`
+        }
+
+        */
+
+        // BUBLING and CAPTURING in addEventListener. By default value is false and this is BUBLING
+        // if u make it true then it move from top to bottom and this is CAPTURING
+
+        // document.getElementById('images').addEventListener('click',function(e){
+        //     console.log('clicked outside')
+        // },true)
+        // document.getElementById('id4').addEventListener('click',function(e){
+        //     console.log('clicked inside')
+        // },true)
+        
+        //to remove the values after clicking on the value
+        document.querySelector('#ulimg').addEventListener('click',function(e){
+            console.log(e.target.parentNode);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            
+        })
+</script>
+</html>
