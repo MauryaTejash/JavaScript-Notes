@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    background-color: gray;
+}
+#guess{
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 10px;
+}
+#field{
+    font-size: 28px;
+    border: 5px solid black;
+    border-style: none;
+    text-align: center;
+    margin-top: 10px;
+}
+#guessSubmit{
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+    border-style: none;
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+}
+.form #guessfield{
+    font-size: 34px;
+}
