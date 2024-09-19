@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+span{
+    display: block;
+}
+.canava {
+    margin: 100px auto 100px;
+    width: 80%;
+    text-align: center;
+}
+.button{
+    height: 100px;
+    width: 100px;
+    border: solid black 5px;
+    display: inline-block;
+}
+#gray{
+    background-color: gray;
+}
+
+#blue{
+    background-color: blue;
+}
+
+#green{
+    background-color: green;
+}
+
+#black{
+    background-color: black;
+    color: white;
+}
