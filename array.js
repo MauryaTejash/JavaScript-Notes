@@ -1,4 +1,4 @@
-// const arr = [1, 2, 3, 4, 5]
+const arr = [1, 2, 3, 4, 5]
 // console.log(arr[1]);
 // console.log(typeof (arr));
 
@@ -26,15 +26,15 @@
 // console.log(arr2);
 
 
-// SLICE AND SPLICE
+                                    // SLICE AND SPLICE
 
 // console.log("A",arr);
 
-// const myArr = arr.slice(0,3)
+// const myArr = arr.slice(0,3) //it create new array which is copied form original array
 // console.log(myArr);
 
 // console.log("B",arr);
-// const myArr1 = arr.splice(1,3)
+// const myArr1 = arr.splice(1,3) //it change the original array by mutating the value in array
 // console.log(myArr1);
 // console.log("C" , arr);
 
